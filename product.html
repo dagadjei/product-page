@@ -2,8 +2,422 @@
 <html>
     <head>
 
+        <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous"
+        />
+
+        <style>
+
+            @import url('https://fonts.googleapis.com/css2?family=Besley:wght@500&display=swap');
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                background-color: #eee;
+                /*background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKsmtmdVw4N3SBRYET1JdU3Fu8klNWry3VEg&usqp=CAU);*/
+                font-family: 'Besley', Arial, Helvetica, sans-serif;
+            }
+            #page-wrapper{
+                position: relative;
+            }
+            li{
+                list-style: none;
+            }
+            a{
+                color: #000;
+                text-decoration: none;
+            }
+            .container{
+                max-width: 1000px;
+                width: 100%;
+                margin: 0 auto;
+            }
+            .btn{
+                padding: 0 20px;
+                height: 40px;
+                font-size: 1em;
+                font-weight: 900;
+                text-transform: uppercase;
+                border: 3px black solid;
+                border-radius: 2px;
+                background: transparent;
+                cursor: pointer;
+            }
+            .grid{
+                display: flex;
+            }
+            header{
+                position: fixed;
+                top:0;
+                min-height: 75px;
+                padding: 0px 20px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background-color: #eee;
+            }
+            @media(max-width: 600px){
+                header{
+                    flex-wrap: wrap;
+                }
+            }
+            .logo{
+                width:60vw;
+            }
+            @media(max-width: 650px){
+                .logo{
+                    margin-top: 15px;
+                    width: 100%;
+                    position: relative;
+                }
+            }
+            .logo > img{
+                width: 60px;
+                height: 60px;
+                max-width: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-left: 20px;
+            }
+            @media(max-width: 650px){
+                .logo > img{
+                    margin: 0 auto;
+                }
+            }
+            nav{
+                font-weight: 400;
+            }
+            @media(max-width: 650px){
+                nav{
+                    margin-top: 10px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    padding: 0 50px;
+                }
+                nav li{
+                    padding-bottom: 5px;
+                }
+            }
+            nav > ul{
+                width: 35vw;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            @media(max-width: 650px){
+                nav > ul{
+                    flex-direction: column;
+                }
+            }
+            #hero{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                height: 200px;
+                margin-top: 50px;
+            }
+            #hero > h2{
+                margin-bottom: 20px;
+                word-wrap: break-word;
+                margin-top: 20px;
+            }
+            form{
+                margin-left: 350px;
+                margin-top: 20px;
+            }
+            form input[type='email']{
+                max-width: 275px;
+                width: 100%;
+                padding: 5px;
+            }
+            form input[type='number']{
+                max-width: 275px;
+                width: 100%;
+                padding: 5px;
+            }
+            form input[type='submit']{
+                max-width: 150px;
+                width: 100%;
+                height: 30px;
+                margin: 15px 0;
+                border: 0;
+                background-color: #f1c40f;
+            }
+            form input[type='submit']:hover{
+                background-color: orange;
+                transition: background-color 1s;
+            }
+            @media(max-width: 650px){
+                #hero{
+                    margin-top: 120px;
+                }
+            }
+            #features{
+                margin-top: 30px;
+            }
+            #features .icon{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 125px;
+                width: 20vw;
+                color: darkorange;
+            }
+            @media(max-width: 550px){
+                #features .icon{
+                    display: none;
+                }
+            }
+            #features .desc{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 125px;
+                width: 80vw;
+                padding: 5px;
+            }
+            @media(max-width: 550px){
+                #features .desc{
+                    width: 100%;
+                    text-align: center;
+                    padding: 0;
+                    height: 150px;
+                }
+            }
+            @media (max-width:650px){
+                #features {
+                    margin: 0;
+                }
+            }
+            #how-it-works{
+                margin-top: 50px;
+                margin-right: 500px;
+                display: flex;
+                justify-content: center;
+            }
+            #how-it-works > video{
+                max-width: 560px;
+                width: 100%;
+            }
+            #pricing{
+                margin-top: 60px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .product{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: calx(100% / 3);
+                margin: 10px;
+                border: 1px solid #000;
+                border-radius: 3px;
+            }
+            .product > .level{
+                background-color: #ddd;
+                color: black;
+                padding: 15px 0;
+                width: 100%;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            .product > h2{
+                margin-top: 15px;
+            }
+            .product > ol{
+                margin: 15px 0;
+            }
+            .product > ol > li{
+                padding: 5px 0;
+            }
+            .product > button{
+                border: 0;
+                margin: 15px 0;
+                background-color: #f1c40f;
+                font-weight: 400;
+            }
+            .product > button:hover{
+                background-color: orange;
+                transition: background-color 1s;
+            }
+            @media(max-width: 800px){
+                #pricing{
+                    flex-direction: column;
+                }
+                .product{
+                    max-width: 300px;
+                    width: 100%;
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                }
+            }
+            footer{
+                margin-top: 30px;
+                background-color: #ddd;
+                padding: 20px;
+            }
+            footer >ul {
+                display: flex;
+                justify-content: flex-end;
+            }
+            footer >ul > li{
+                padding: 0 10px;
+            }
+            footer > span{
+                margin-top: 5px;
+                display: flex;
+                justify-content: flex-end;
+                font-size: 0.9em;
+                color: #444;
+            }
+            
+        </style>
     </head>
     <body>
+        <div id="page-wrapper">
+        <header id="header">
+            <div class="logo">
+            
+            <img id="header-img" src="data:image/png;base64,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" alt="website logo">
+            </div>
+            <nav id="nav-bar">
+                <ul>
+                    <li class="nav-link"><a href="#">Home</a></li>
+                    <li class="nav-link"><a href="#">Products</a></li>
+                    <li class="nav-link"><a href="#">About/Location</a></li>
+                </ul>
+
+            </nav>
+        </header> 
+
+        <section id="hero">
+            
+            <h2>Come To our store and try Out Various Amazing Jewels!<br>
+                Purely Authentic too!!</h2><br>
+        </section>
+
+        <section id="how-it-works">
+            <div class="container"></div>
+            <p>
+                <video src="https://www.youtube.com/watch?v=1yTz2Dg1V8s" controls width="300" height="300">
+                    
+                </video>
+            </p>
+        </section>    
+
+            
+        <div class="container">
+            <section id="features">
+                <div class="grid">
+                    <div class="icon"><i class="fa fa-3x fa-fire"></i></div>
+                    <div class="desc">
+                        <h2>Quality And Affordable</h2>
+                        <p>
+                            We make sure you get value for your money.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="icon"><i class="fa fa-3x fa-ship"></i></div>
+                    <div class="desc">
+                        <h2>Fast Shipping</h2>
+                        <p>
+                            We make sure you get your items as fast as possible.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="icon"><i class="fa fa-3x fa-fire"></i></div>
+                    <div class="desc">
+                        <h2>Warranty Assured</h2>
+                        <p>
+                            We make sure you get Warranty.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" >
+                <div id="tenor" class="product">
+                <div class="level">Tenor Trombone</div>
+                <h2>$600</h2>
+                <ol>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                </ol>
+                <button class="btn">Select</button>
+                </div>
+                <div id="tenor" class="product">
+                    <div class="level">Tenor Trombone</div>
+                    <h2>$600</h2>
+                    <ol>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                    </ol>
+                    <button class="btn">Select</button>
+                </div>
+                <div id="tenor" class="product">
+                    <div class="level">Tenor Trombone</div>
+                    <h2>$600</h2>
+                    <ol>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                    </ol>
+                    <button class="btn">Select</button>
+                </div>
+                
+            </section>
+
+            <form class="form" action="https://www.freecodecamp.com/email-submit">
+                <p><strong>Please Fill this form to be added to our newsletter</strong></p>
+                <label for="email">Email</label><br>
+                <input type="email" name="email" id="email" placeholder="type in your mail"><br>
+                <label for="number">Phone Number</label><br>    
+                <input type="number" id="number"><br>
+                <label for="submit"><input type="submit" id="submit" class="btn"></label><br>
+            </form>
+
+
+            <footer>
+                <ul>
+                    <li>Privacy</li>
+                    <li>Terms</li>
+                    <li>Delivery</li>
+
+                </ul>
+                <span>Copyright 2016, Jewels</span>
+            </footer>
+        </div>
+
+
+            
+
+
+
+
+
+            
         
+        </div>
     </body>
 </html>
